@@ -42,48 +42,50 @@
         </div>
     </nav> -->
     
-        <nav class="navbar navbar-expand-lg bg-body-tertiary">
-    <div class="container-fluid">
+       <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
     <a class="navbar-brand" href="#">Navbar</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">뉴스</a>
+          <a class="nav-link active" aria-current="page" href="#">뉴스
+          </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">챔피온</a>
+            <a class="nav-link" href="MainPage/download.html">다운로드</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">다운로드</a>
+          <a class="nav-link active" aria-current="page" href="#">뉴스
+          </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">로그인</a>
+          <a class="nav-link" href="#">Link</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            외부웹사이트
-            </a>
-            <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="https://www.leagueoflegends.com/ko-kr/" target="_blank">LoL공식사이트</a></li>
-            <li><a class="dropdown-item" href="#">another actoion</a></li>
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+          </ul>
         </li>
         <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
         </li>
-        </ul>
-        <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+      </ul>
+      <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
-        </form>
+      </form>
     </div>
-    </div>
-    </nav>
+  </div>
+</nav>
 
     <!-- 히어로 배너 (Hero Banner) -->
     <section class="hero d-flex align-items-center justify-content-center text-center py-5">
@@ -109,7 +111,7 @@
                     </div>
                 </div>
             </div> -->
-                        <div class="col">
+                <div class="col">
             <div class="card bg-dark text-white border-secondary h-100">
             <img src="image/Aatrox.jpg" class="card-img-top" alt="아트록스">
             <div class="card-body">
@@ -127,15 +129,17 @@
             </div>
             </div>
 
-            <!--모달(iframe으로Aatrox.html 불러오기) -->
+
+            <!-- 모달(iframe으로Aatrox.html 불러오기) -->
             <div class="modal fade" id="modalAatrox" tabindex="-1" aria-labelledby="modalAatroxLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content bg-dark text-white border-secondary">
-            <!--헤더-->
+            <!-- 헤더 -->
             <div class="modal-header border-secondary">
             <h5 class="modal-title" id="modalAatroxLabel">아트록스(Aatrox) 상세정보</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
+
             <!--바디: iframe으로내용채움-->
             <div class="modal-body p-0" style="height: 65vh; background: #0a0e17;">
             <iframe
