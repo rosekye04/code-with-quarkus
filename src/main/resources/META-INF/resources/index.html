@@ -9,6 +9,8 @@
     <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
      <script src="js/bootstrap.bundle.min.js"></script>
      <script src="js/test.js"></script>
+     <script src="js/test2.js"></script>
+     <script src="js/toggle.js"></script>
 
     <!-- 커스텀 스타일 (LOL 테마 + 챔피언 호버 효과) -->
     <link rel="stylesheet" href="css/main.css">
@@ -35,12 +37,17 @@
         </div>
     </nav> -->
     
-     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="/image/Logo.jpg" alt="LOL 로고" width="30" height="30" class="d-inline-block align-top">
-      League of Legends
-    </a>
+     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <img src="/images/LOL.webp" alt="" width="30" height="24">
+        <!-- [변경] "Navbar" 텍스트 → 다크/라이트 토글 버튼-->
+        <button class="btn border-0" id="themeToggleBtn" onclick="toggleTheme()">
+        DARK🌙
+        </button>
+
+    <!-- <a class="navbar-brand" href="#">
+      <img src="/image/Logo.jpg" alt="LOL 로고" width="30" height="30" class="d-inline-block align-top">League of Legends
+    </a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
