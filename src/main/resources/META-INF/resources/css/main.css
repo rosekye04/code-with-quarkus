@@ -82,3 +82,19 @@ body.light-mode .hero { background: linear-gradient(to bottom, #dce3ea, #f8f9fa)
 body.light-mode .card { background-color: #ffffff; color: #212529; border: 1px solid #dee2e6; }
 body.light-mode .card-title { color: #212529; }
 body.light-mode .card-text { color: #555; }
+
+/* 로그인 페이지 폼 스타일 추가 */
+.hero .container {
+    background-color: #1e1e1e; /* 다크 모드 카드 배경 */
+    padding: 30px;
+    border-radius: 10px;
+}
+
+body.light-mode .hero .container {
+    background-color: #ffffff; /* 라이트 모드 배경 */
+    border: 1px solid #dee2e6;
+}
+
+body.light-mode label {
+    color: #212529; /* 라이트 모드 글씨색 */
+}

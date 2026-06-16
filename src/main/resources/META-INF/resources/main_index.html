@@ -4,50 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>League of Legends - 메인 페이지</title>
-    <!-- Bootstrap 5 CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
-     <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
      <script src="js/test.js"></script>
      <script src="js/test2.js"></script>
      <script src="js/toggle.js"></script>
 
-    <!-- 커스텀 스타일 (LOL 테마 + 챔피언 호버 효과) -->
     <link rel="stylesheet" href="css/main.css">
      <script>window.onload = function() {alert("메인 페이지 로딩 완료");}</script>
 </head>
+<!–토스트컨테이너</body> 바로위에추가-->
+<div class="toast-container position-fixed
+bottom-0 end-0 p-3" style="z-index:9999">
+<div id="liveToast" class="toast align-items-center
+text-white bg-success border-0" role="alert">
+<div class="d-flex">
+<div class="toast-body" id="toastBody">
+메시지
+</div>
+<button type="button"
+class="btn-close btn-close-white me-2 m-auto"
+data-bs-dismiss="toast"></button>
+</div>
+</div>
+</div>
 <body>
-
-    <!-- 헤더 (Navbar) -->
-    <!-- <nav class="navbar navbar-expand-lg navbar-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="http://localhost:8080/index.html">League of Legends</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="#">뉴스</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">챔피언</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">다운로드</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">로그인</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://www.leagueoflegends.com/ko-kr/" target="_blank">외부웹사이트</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav> -->
     
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
+        <div  class="container-fluid">
             <img src="/images/LOL.webp" alt="" width="30" height="24">
-        <!-- [변경] "Navbar" 텍스트 → 다크/라이트 토글 버튼-->
-        <button class="btn border-0" id="themeToggleBtn" onclick="toggleTheme()">
+        <button class="btn border-0" id="themeToggleBtn">
         DARK🌙
         </button>
 
-    <!-- <a class="navbar-brand" href="#">
-      <img src="/image/Logo.jpg" alt="LOL 로고" width="30" height="30" class="d-inline-block align-top">League of Legends
-    </a> -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -61,11 +50,11 @@
             <a class="nav-link" href="MainPage/download.html">다운로드</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">뉴스
+          <a class="nav-link active" aria-current="page" href="#">챔피온
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link" href="/login">로그인</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -84,36 +73,24 @@
       </ul>
       <form class="d-flex" id="searchForm">
             <input class="form-control me-2" type="search" placeholder="Search"aria-label="Search" id="searchInput">
-            <button class="btnbtn-outline-success" type="submit">Search</button>
+            <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
   </div>
 </nav>
 
-    <!-- 히어로 배너 (Hero Banner) -->
     <section class="hero d-flex align-items-center justify-content-center text-center py-5">
         <div class="container">
             <h1 class="display-3 fw-bold">League of Legends</h1>
             <p class="lead">적의 넥서스를 파괴하세요! 5v5 MOBA 전투에서 팀과 함께 승리하세요.</p>
-            <a href="#" class="btn btn-primary btn-lg" onclick="alert('즐거운플레이되세요')">무료플레이</a>
+            <a href="#" id="playBtn" class="btn btn-primary btn-lg">무료플레이</a>
         </div>
     </section>
 
-<!-- 챔피언 선택 섹션 (작은 썸네일 PNG로 업데이트!) -->
-    <section class="container my-5">
+<section class="container my-5">
         <h2 class="text-center mb-4 accent-purple">챔피언 선택</h2>
         <p class="text-center mb-5">전투에 뛰어들기, 팀 지원, 또는 그 중간? 당신의 스타일을 선택하세요.</p>
         <div class="row g-4">
-            <!-- Aatrox -->
-            <!-- <div class="col-md-6 col-lg-4 col-xl-2">
-                <div class="card text-center h-100">
-                    <img src="image/Aatrox.jpg" class="card-img-top" alt="Aatrox" loading="lazy">
-                    <div class="card-body">
-                        <h5 class="card-title accent-red">Aatrox (탑)</h5>
-                        <p class="card-text">어둠의 검으로 적을 베세요.</p>
-                    </div>
-                </div>
-            </div> -->
                 <div class="col">
             <div class="card bg-dark text-white border-secondary h-100">
             <img src="image/Aatrox.jpg" class="card-img-top" alt="아트록스">
@@ -133,17 +110,14 @@
             </div>
 
 
-            <!-- 모달(iframe으로Aatrox.html 불러오기) -->
             <div class="modal fade" id="modalAatrox" tabindex="-1" aria-labelledby="modalAatroxLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content bg-dark text-white border-secondary">
-            <!-- 헤더 -->
             <div class="modal-header border-secondary">
             <h5 class="modal-title" id="modalAatroxLabel">아트록스(Aatrox) 상세정보</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <!--바디: iframe으로내용채움-->
             <div class="modal-body p-0" style="height: 65vh; background: #0a0e17;">
             <iframe
             src="modals/Aatrox.html"
@@ -152,7 +126,6 @@
             allowfullscreen>
             </iframe>
             </div>
-            <!--푸터-->
             <div class="modal-footer border-secondary">
             <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">닫기</button>
             </div>
@@ -200,17 +173,14 @@
             </div>
         </div>
 
-         <!-- 모달(iframe으로Aatrox.html 불러오기) -->
-            <div class="modal fade" id="modalYunara" tabindex="-1" aria-labelledby="modalYunaraLabel" aria-hidden="true">
+         <div class="modal fade" id="modalYunara" tabindex="-1" aria-labelledby="modalYunaraLabel" aria-hidden="true">
             <div class="modal-dialog modal-xl modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content bg-dark text-white border-secondary">
-            <!-- 헤더 -->
             <div class="modal-header border-secondary">
             <h5 class="modal-title" id="modalYunaraLabel">유나라(Yunara) 상세정보</h5>
             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-            <!--바디: iframe으로내용채움-->
             <div class="modal-body p-0" style="height: 65vh; background: #0a0e17;">
             <iframe
             src="modals/Yunara.html"
@@ -219,7 +189,6 @@
             allowfullscreen>
             </iframe>
             </div>
-            <!--푸터-->
             <div class="modal-footer border-secondary">
             <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">닫기</button>
             </div>
@@ -314,7 +283,6 @@
     </div>
 </section>
 
-    <!-- 뉴스 섹션 (기존 유지) -->
     <section class="container my-5">
         <h2 class="text-center mb-4 accent-red">최신 뉴스</h2>
         <div class="row g-4">
@@ -339,34 +307,27 @@
         </div>
     </section>
 
-            <!--===== 검색결과섹션(기본숨김) ===== -->
-    <section id="searchResults">
-        <!--키워드헤더-->
+            <section id="searchResults">
         <div class="search-keyword-header">
         <h1 id="searchKeywordDisplay"></h1>
         </div>
-        <!--본문: 사이드바+ 콘텐츠-->
         <div class="search-body">
         <div class="container-fluid px-0">
         <div class="row g-0">
-        <!--왼쪽카테고리사이드바-->
         <div class="col-md-3 col-lg-2 search-sidebar bg-white py-4">
         <div class="px-3 mb-3" style="font-size:0.8rem; color:#999; text-transform:uppercase; letter-spacing:0.1em;">카테고리</div>
-        <div class="search-category-item active" onclick="switchCategory('champion', this)">
+        <div class="search-category-item active" id="catChampion">
         챔피언<span class="count" id="champCount">(0)</span>
         </div>
-        <div class="search-category-item" onclick="switchCategory('news', this)">
+        <div class="search-category-item" id="catNews">
 뉴스<span class="count" id="newsCount">(0)</span>
 </div>
 </div>
-<!--오른쪽콘텐츠-->
 <div class="col-md-9 col-lg-10 search-content-area">
-<!--챔피언결과-->
 <div id="resultChampion">
 <h5 class="mb-4" style="color:#333;">챔피언</h5>
 <div id="championResultList"></div>
 </div>
-<!--뉴스결과-->
 <div id="resultNews" style="display:none;">
 <h5 class="mb-4" style="color:#333;">뉴스</h5>
 <div id="newsResultList"></div>
@@ -378,8 +339,15 @@
 </section>
 
         
-    <!-- ==== 검색 JavaScript ==== -->
-     <script src="js/search.js"></script>
+    <script src="js/search.js"></script>
+     
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('themeToggleBtn').addEventListener('click', toggleTheme);
+            document.getElementById('playBtn').addEventListener('click', () => alert('즐거운플레이되세요'));
+            document.getElementById('catChampion').addEventListener('click', function() { switchCategory('champion', this); });
+            document.getElementById('catNews').addEventListener('click', function() { switchCategory('news', this); });
+        });
+     </script>
 </body>
 </html>
-
